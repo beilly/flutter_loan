@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_loan/page/demo_page.dart';
+import 'package:flutter_loan/common/utils/navigator_utils.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -76,15 +76,15 @@ class _HomePageState extends State<HomePage> {
             ),
             RaisedButton(
                 child: new Text(
-                  '跳转到page1',
+                  '登录/注册',
                   style: new TextStyle(color: Colors.black, fontSize: 16.0),
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(context, DemoPage.sName);
+                  NavigatorUtils.toLogin(context);
                 }),
             RaisedButton(
                 child: new Text(
-                  '跳转到page2',
+                  '跳转到page',
                   style: new TextStyle(color: Colors.black, fontSize: 16.0),
                 ),
                 onPressed: () {
@@ -95,8 +95,7 @@ class _HomePageState extends State<HomePage> {
                       "dateOfBirth": "2019-08-03 09:48:00"
                       }
                   ''';
-                  Navigator.pushNamed(context, DemoPage.sName,
-                      arguments: _json);
+                  NavigatorUtils.toDemo1(context, arguments: _json);
                 }),
           ],
         ),

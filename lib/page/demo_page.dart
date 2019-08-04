@@ -2,11 +2,11 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_loan/common/bean/user.dart';
+import 'package:flutter_loan/common/utils/widget_utils.dart';
 import 'package:flutter_loan/widget/demo_item.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class DemoPage extends StatefulWidget {
-  static final sName = '/demo';
+  static final sName = '/demo/demo1';
 
   final String title;
 
@@ -48,7 +48,7 @@ class _DemoPageState extends State<DemoPage> {
     var person = User.fromJson(map);
 
     print("argumentsm: $person");
-    Fluttertoast.showToast(msg: person.dateOfBirth.toString());
+    showToast(person.dateOfBirth.toString());
 
     return WillPopScope(
       onWillPop: () {
